@@ -1,0 +1,5 @@
+# secret keyz
+.env
+
+# Dependency directory
+node_modules

@@ -1,0 +1,32 @@
+{
+  "name": "uneska-api",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "scripts": {
+    "start": "NODE_ENV=production knex migrate:latest && node index.js",
+    "dev": "NODE_ENV=development nodemon index.js",
+    "test": "NODE_ENV=test mocha --compilers js:babel-register --require babel-polyfill tests/*.js",
+    "lint": "eslint '{src,config,tests,bin,seeds,db,lib}/**/*.js'",
+    "lint:fix": "npm run lint -- --fix",
+    "docs": "apidoc -i src/ -o docs",
+    "prettier": "prettier --single-quote --print-width 120 --write '{src,config,tests,bin,server}/**/*.js' && npm run lint:fix",
+    "precommit": "lint-staged",
+    "db:migrate": "knex migrate:latest",
+    "db:reboot": "knex migrate:rollback; knex migrate:latest; knex seed:run"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-module-resolver": "^2.7.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "dotenv": "^4.0.0",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-json-logger": "^1.0.2",
+    "koa-logger": "^3.1.0",
+    "koa2-cors": "^2.0.3",
+    "nodemon": "^1.12.1"
+  }
+}
