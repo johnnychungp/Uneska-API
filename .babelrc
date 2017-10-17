@@ -12,12 +12,17 @@
   ],
   "plugins": [
     ["module-resolver", {
-      "root": ["./src"],
+      "root": ["./"],
       "alias": {
         "lib": "./lib",
         "db": "./db",
-        "config": "./config"
+        "helpers": "./src/helpers",
+        "config": "./config",
+        "middleware": "./src/middleware",
+        "models": "./src/models",
+        "modules": "./src/modules",
+        "locales": "./src/locales"
       }
     }]
-  ]
+]
 }
