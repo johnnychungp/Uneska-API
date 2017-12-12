@@ -12,48 +12,6 @@ export default class User extends Model {
     return ['password', 'passwordResetToken', 'resetTokenExpiry']
   }
 
-  static jsonSchema = {
-    type: 'object',
-
-    properties: {
-      id: { type: 'integer' },
-      email: { type: 'string', format: 'email' },
-      password: { type: 'string' },
-      role: { type: 'string' },
-      passwordResetToken: { type: ['string', 'null'] },
-      resetTokenExpiry: { type: ['string', 'null'], format: 'date-time' },
-      facebookToken: { type: 'string' },
-      facebookId: { type: 'string' },
-      instagramToken: { type: 'string' },
-      instagramId: { type: 'string' },
-      googleToken: { type: 'string' },
-      googleId: { type: 'string' },
-      isVerified: { type: 'boolean' },
-      onboarded: { type: 'boolean' },
-      vatNumber: { type: 'string' },
-      companyName: { type: 'string' },
-      companyAddress: { type: 'string' },
-      companyAddress2: { type: 'string' },
-      companyCountry: { type: 'string' },
-      companyCity: { type: 'string' },
-      companyState: { type: 'string' },
-      companyZipCode: { type: 'string' },
-      billingName: { type: 'string' },
-      billingAddress: { type: 'string' },
-      billingAddress2: { type: 'string' },
-      billingCountry: { type: 'string' },
-      billingCity: { type: 'string' },
-      billingState: { type: 'string' },
-      billingZipCode: { type: 'string' },
-      contactName: { type: 'string' },
-      contactEmail: { type: 'string' },
-      contactNumber: { type: 'string' },
-      lastSeen: { type: 'string', format: 'date-time' },
-      createdAt: { type: 'string', format: 'date-time' },
-      updatedAt: { type: 'string', format: 'date-time' }
-    }
-  };
-
   static relationMappings = {
   };
 

@@ -8,4 +8,5 @@ export default {
     connection: process.env.DATABASE_URL,
     debug: false
   },
+  jwtSecret: process.env.JWT
 }

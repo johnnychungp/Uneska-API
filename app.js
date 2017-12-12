@@ -6,6 +6,7 @@ import bodyParser from 'koa-bodyparser'
 import errorMiddleware from 'middleware/error'
 import passport from 'koa-passport'
 import config from 'config'
+import modules from 'modules'
 
 const app = new Koa()
 
@@ -26,10 +27,9 @@ app.use(bodyParser())
 
 app.use(errorMiddleware())
 
-require('config/passport')
+import 'config/passport'
 app.use(passport.initialize())
 
-const modules = require('src/modules')
 modules(app)
 
 app.listen(config.port, () => {
